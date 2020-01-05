@@ -19,5 +19,5 @@ Esperar que se construya la imagen y abrirla.
 ```bash
 docker run  -d \
 --publish 3306:3306 \
---name=test-mysql-microservice test-mysql
+--name=mysql-service test-mysql
 ```
