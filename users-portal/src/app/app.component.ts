@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { ServerService } from './server.service'
-import {MatSnackBar} from '@angular/material/snack-bar'
+import { MatSnackBar } from '@angular/material/snack-bar'
 
 @Component({
   selector: 'app-root',
@@ -67,6 +67,10 @@ export class AppComponent {
 
   openSnackBar(message: string) {
     this._snackBar.open(message);
+  }
+
+  logInfo() {
+    console.log(this.data)
   }
 }
 

@@ -56,6 +56,8 @@ class App {
         } else fieldsCount++
       }
 
+      console.log(req.body)
+
       if (allFieldsInBody && fieldsCount === fields.length) {
         this.connection.query(`INSERT INTO \`users\` VALUES (null, '${JSON.stringify(req.body)}');`, (error: mysql.MysqlError, results: object, fields: mysql.FieldInfo) => {
           if (error) res.status(500).send({ msg:'Internal server error', data: error })

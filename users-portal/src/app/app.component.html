@@ -6,11 +6,11 @@
   <mat-tab label="Formulario">
     <div class="content">
       <mat-form-field>
-        <input matInput placeholder="Nombre(s)" ([value])="data.name">
+        <input matInput placeholder="Nombre(s)" [(ngModel)]="data.name">
       </mat-form-field>
     
       <mat-form-field>
-        <input matInput placeholder="Apellidos" ([value])="data.lastname">
+        <input matInput placeholder="Apellidos" [(ngModel)]="data.lastname">
       </mat-form-field>
     
       <mat-form-field>
@@ -23,7 +23,7 @@
       </mat-form-field>
     
       <mat-form-field>
-        <input matInput placeholder="CUI" [textMask]="{mask: mask}" [(value)]="data.cui" type="text"/>
+        <input matInput placeholder="CUI" [textMask]="{mask: mask}" [(ngModel)]="data.CUI" type="text"/>
       </mat-form-field>
     
       <button mat-flat-button color="accent" (click)="uploadClick()">Subir</button>
