@@ -1,21 +1,35 @@
 {
-  "name": "users-angular-mysql",
+  "name": "angular-mysql",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "echo 'no tests' && exit 0",
+    "start": "ts-node src/index",
+    "build:live": "nodemon --exec ts-node src/index.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fabrv/users-angular-mysql.git"
+    "url": "git+https://github.com/fabrv/angular-mysql.git"
   },
+  "author": "fabrv",
   "license": "MIT",
-  "homepage": "https://github.com/fabrv/users-angular-mysql",
+  "bugs": {
+    "url": "https://github.com/fabrv/angular-mysql/issues"
+  },
+  "homepage": "https://github.com/fabrv/angular-mysql#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
-    "mysql": "^2.15.0"
+    "@types/mysql": "^2.15.8",
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
