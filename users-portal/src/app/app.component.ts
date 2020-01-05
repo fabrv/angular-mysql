@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 import { ServerService } from './server.service'
+import {MatSnackBar} from '@angular/material/snack-bar'
 
 @Component({
   selector: 'app-root',
@@ -20,12 +21,12 @@ export class AppComponent {
 
   data: IUser = {
     name: '',
-    lastnames: '',
+    lastname: '',
     civilState: 'Soltero',
     CUI: ''
   }
 
-  constructor (private server: ServerService) {
+  constructor (public server: ServerService, private _snackBar: MatSnackBar) {
     this.loadData()
   }
 
@@ -40,6 +41,33 @@ export class AppComponent {
 
     this.allUsers = data
   }
+
+  async submitData(data: IUser) {
+    const response = await this.server.insertUser(data);
+
+    if (response.status){
+      this.openSnackBar('Usuario exitosamente subido')
+      this.data = {
+        name: '',
+        lastname: '',
+        civilState: 'Soltero',
+        CUI: ''
+      }
+
+      this.loadData()
+
+    } else {
+      console.log(response)
+    }
+  }
+
+  uploadClick() {
+    this.submitData(this.data)
+  }
+
+  openSnackBar(message: string) {
+    this._snackBar.open(message);
+  }
 }
 
-interface IUser { name: string, lastnames: string, civilState: string, CUI: string }
+interface IUser { name: string, lastname: string, civilState: string, CUI: string }

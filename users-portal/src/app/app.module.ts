@@ -11,7 +11,8 @@ import {
   MatSelectModule,
   MatButtonModule,
   MatTabsModule,
-  MatListModule } from '@angular/material';
+  MatListModule,
+  MatSnackBarModule } from '@angular/material';
 
 import { TextMaskModule } from 'angular2-text-mask'
 
@@ -32,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http'
     TextMaskModule,
     MatButtonModule,
     MatTabsModule,
-    MatListModule
+    MatListModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

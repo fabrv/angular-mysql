@@ -18,7 +18,7 @@ export class ServerService {
     })
   }
 
-  insertUser (data: { name: string, lastnames: string, civilState: string, cui: string }): Promise<any> {
+  insertUser (data: { name: string, lastname: string, civilState: string, CUI: string }): Promise<any> {
     return new Promise((response)=>{
       this.http.post('http://localhost:4000/users', data).subscribe(
         data => response({status: true, data: data}),
@@ -27,7 +27,7 @@ export class ServerService {
     })
   }
 
-  patchUser (id: number, data: { name: string, lastnames: string, civilState: string, cui: string }): Promise<any> {
+  patchUser (id: number, data: { name: string, lastname: string, civilState: string, CUI: string }): Promise<any> {
     return new Promise((response)=>{
       this.http.patch(`http://localhost:4000/users?id=${id}`, data).subscribe(
         data => response({status: true, data: data}),

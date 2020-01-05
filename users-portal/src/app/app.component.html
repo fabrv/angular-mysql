@@ -6,11 +6,11 @@
   <mat-tab label="Formulario">
     <div class="content">
       <mat-form-field>
-        <input matInput placeholder="Nombre(s)" value="">
+        <input matInput placeholder="Nombre(s)" ([value])="data.name">
       </mat-form-field>
     
       <mat-form-field>
-        <input matInput placeholder="Apellidos" value="">
+        <input matInput placeholder="Apellidos" ([value])="data.lastname">
       </mat-form-field>
     
       <mat-form-field>
@@ -26,7 +26,7 @@
         <input matInput placeholder="CUI" [textMask]="{mask: mask}" [(value)]="data.cui" type="text"/>
       </mat-form-field>
     
-      <button mat-flat-button color="accent">Subir</button>
+      <button mat-flat-button color="accent" (click)="uploadClick()">Subir</button>
     </div>
   </mat-tab>
 
