@@ -2,6 +2,7 @@
 ## Prerequisitos
 * [Docker](https://www.docker.com/)
 * [NodeJS](https://nodejs.org/en/)
+* [Angular](https://angular.io/cli)
 ## Descargar
 ```bash
 git clone https://github.com/fabrv/angular-mysql.git
@@ -38,7 +39,7 @@ docker run  -d \
 -e MYSQL_PASSWORD='password' \
 -e MYSQL_DATABASE='test' \
 -e MYSQL_HOST='172.17.0.2' \
---link test-mysql-microservice:db \
+--link mysql-service:db \
 --name=test-nodejs-microservice test-nodejs
 ```
 
