@@ -9,7 +9,9 @@ import {
   MatInputModule, 
   MatCardModule, 
   MatSelectModule,
-  MatButtonModule } from '@angular/material';
+  MatButtonModule,
+  MatTabsModule,
+  MatListModule } from '@angular/material';
 
 import { TextMaskModule } from 'angular2-text-mask'
 
@@ -25,7 +27,9 @@ import { TextMaskModule } from 'angular2-text-mask'
     MatCardModule,
     MatSelectModule,
     TextMaskModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTabsModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

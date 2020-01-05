@@ -11,6 +11,8 @@ export class AppComponent {
   mask: Array<any> = [/[1-9]/, /\d/, /\d/, /\d/, ' ' , /\d/, /\d/, /\d/, /\d/, /\d/, ' ' , /\d/, /\d/, /\d/, /\d/]
   civilState: string = 'Soltero'
 
+  selectedTabIndex = 0
+
   data: { name: string, lastnames: string, civilState: string, cui: string } = {
     name: '',
     lastnames: '',

@@ -2,27 +2,40 @@
   <span>{{title}}</span>
 </mat-toolbar>
 
-<div class="form">
-  <mat-form-field>
-    <input matInput placeholder="Nombre(s)" value="">
-  </mat-form-field>
+<mat-tab-group [selectedIndex]="selectedTabIndex">
+  <mat-tab label="Formulario">
+    <div class="content">
+      <mat-form-field>
+        <input matInput placeholder="Nombre(s)" value="">
+      </mat-form-field>
+    
+      <mat-form-field>
+        <input matInput placeholder="Apellidos" value="">
+      </mat-form-field>
+    
+      <mat-form-field>
+        <mat-label>Estado civil</mat-label>
+        <mat-select [(value)]="data.civilState">
+          <mat-option *ngFor="let state of civilStates" [value]="state">
+            {{state}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <input matInput placeholder="CUI" [textMask]="{mask: mask}" [(value)]="data.cui" type="text"/>
+      </mat-form-field>
+    
+      <button mat-flat-button color="accent">Subir</button>
+    </div>
+  </mat-tab>
 
-  <mat-form-field>
-    <input matInput placeholder="Apellidos" value="">
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Estado civil</mat-label>
-    <mat-select [(value)]="data.civilState">
-      <mat-option *ngFor="let state of civilStates" [value]="state">
-        {{state}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field>
-    <input matInput placeholder="CUI" [textMask]="{mask: mask}" [(value)]="data.cui" type="text"/>
-  </mat-form-field>
-
-  <button mat-flat-button color="accent">Subir</button>
-</div>
+  <mat-tab label="Listado">
+    <div class="content">
+      <mat-action-list>
+        <button mat-list-item> Save </button>
+        <button mat-list-item> Undo </button>
+      </mat-action-list>
+    </div>
+  </mat-tab>
+</mat-tab-group>
