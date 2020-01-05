@@ -33,8 +33,7 @@
   <mat-tab label="Listado">
     <div class="content">
       <mat-action-list>
-        <button mat-list-item> Save </button>
-        <button mat-list-item> Undo </button>
+        <button *ngFor="let user of allUsers" mat-list-item>{{user.data.name}} {{user.data.lastname}} - {{user.data.CUI}}</button>
       </mat-action-list>
     </div>
   </mat-tab>
