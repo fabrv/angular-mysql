@@ -29,7 +29,7 @@ Por cuestiones de permisos la imagen de MySQL no funciona en Windows. La mejor o
 (Funciona en Windows, Linux y MacOS)
 ```bash
 cd ../nodejs
-docker docker build -t test-nodejs .
+docker build -t test-nodejs .
 ```
 Entrar en directorio y construir la imagen.
 ```bash
