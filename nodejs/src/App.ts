@@ -2,6 +2,7 @@ import express, { Router } from 'express'
 import { createServer, Server } from 'http'
 import bodyParser from 'body-parser'
 import cors from 'cors'
+import path from 'path'
 import * as mysql from 'mysql'
 
 class App {
@@ -18,6 +19,7 @@ class App {
 
   constructor () {
     this.app = express()
+    this.app.use(express.static(path.resolve(__dirname, '../view')))
 
     this.connection.connect()
 
